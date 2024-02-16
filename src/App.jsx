@@ -6,8 +6,8 @@ import "./App.css";
 function App() {
   return (
     <main className="App">
-      <AddPostForm />
       <PostsList />
+      <AddPostForm />
     </main>
   );
 }
