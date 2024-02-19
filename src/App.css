@@ -61,3 +61,20 @@ form {
   color: black;
   font-size: 1rem;
 }
+
+.currentPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+.otherPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  cursor: pointer;
+}
