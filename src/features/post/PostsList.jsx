@@ -1,12 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import {
   selectAllPosts,
   getPostsStatus,
   getPostsError,
   getCurrentPage,
   getPostsPerPage,
-  fetchPosts,
   setCurrentPage,
 } from "./postsSlice";
 import PostsSingle from "./PostsSingle";
@@ -18,12 +16,6 @@ const PostsList = () => {
   const postsError = useSelector(getPostsError);
   const currentPage = useSelector(getCurrentPage);
   const postsPerPage = useSelector(getPostsPerPage);
-
-  useEffect(() => {
-    if (postsStatus === "idle") {
-      dispatch(fetchPosts());
-    }
-  }, [postsStatus, dispatch]);
 
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(posts.length / postsPerPage); i++) {
@@ -49,7 +41,6 @@ const PostsList = () => {
 
   return (
     <section>
-      <h2>Posts</h2>
       {content}
       <div
         style={{
